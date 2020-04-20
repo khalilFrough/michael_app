@@ -11,7 +11,7 @@ gem 'bcrypt','3.1.12'
 # Use sqlite3 as the database for Active Record
 # testing gem 
 gem 'rails-controller-testing'
-gem 'sqlite3', '~> 1.4'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'sqlite3', '~> 1.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -46,6 +47,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+group :production do 
+  gem 'pg'
+end 
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
